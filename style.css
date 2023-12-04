@@ -34,8 +34,16 @@ section {
 }
 
 #about {
+    /* align-items: center; */
+}
+
+#about-container{
+    height: 100%;
+    display: grid;
+    grid-template: 1fr/ 60% 40%;
     align-items: center;
 }
+
 
 .about-me {
     margin: 3rem;
