@@ -1,0 +1,16 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: white;
+}
+
+body {
+    transition: background-color 1s;
+    background-color: rgb(77, 77, 77);
+    display: grid
+}
+
+section {
+    min-height: 100vh;
+}
