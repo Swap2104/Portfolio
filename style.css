@@ -13,17 +13,18 @@
 }
 
 body {
+    overflow-x: hidden;
     transition: background-color 1s;
-    display: grid;
+    /* display: grid; */
 }
 
 section {
     min-height: 100vh;
     display: grid;
+    grid-template: 9fr 1fr/1fr;
 }
 
 #index {
-    grid-template: 90% 10%/ 40% 60%;
     align-items: center;
     justify-items: center;
 }
@@ -33,13 +34,11 @@ section {
 }
 
 #about {
-    grid-template: 90% 10%/ 40% 60%;
     align-items: center;
 }
 
 .about-me {
     margin: 3rem;
-    width: 100%;
     height: max-content;
     padding: 2rem;
     border-radius: 10px;
@@ -61,10 +60,8 @@ section {
     justify-self: end;
     margin: 1rem;
     border-radius: 10px;
-    height: 70%;
-    width: 30%;
-    grid-row: 2/3;
-    grid-column: 2/3;
+    /* height: 70%; */
+    /* width: 60%; */
     background-color: rgb(61, 61, 61);
 }
 
