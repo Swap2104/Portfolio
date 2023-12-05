@@ -51,6 +51,8 @@ section {
     grid-auto-flow: column;
 }
 
+/* ! about section */
+
 #about-container {
     height: 100%;
     display: grid;
@@ -58,7 +60,6 @@ section {
     align-items: center;
 }
 
-/* ! about section */
 .about-me,
 .github-card {
     margin: 2rem;
@@ -68,7 +69,6 @@ section {
     background-color: rgb(49, 49, 49);
     text-align: justify;
 
-    /* https://smoothshadows.com/#djEsMSw1LDAuMSwzMiwzMiwwLCMwMDAwMDAsIzFlMWUxZSwjMzEzMTMxLDI%3D */
     box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.02),
         0px 5px 5px rgba(0, 0, 0, 0.04),
         0px 12px 12px rgba(0, 0, 0, 0.06),
@@ -76,20 +76,38 @@ section {
         0px 32px 32px rgba(0, 0, 0, 0.10);
 }
 
+.about-me>h1 {
+    padding: 0 0 1.5rem 0;
+}
+
 .github-card {
     display: grid;
     grid-template: 1fr 1fr / 1fr;
     align-self: self-end;
-    margin: 0 1rem 2rem 0 ;
+    margin: 0 1rem 2rem 0;
 }
 
 .github-card>a {
     text-align: right;
 }
 
+/* ! info section */
+#info-content {
+    display: grid;
+    grid-template: 10% 45% 45%/1fr;
+    padding: 2rem;
+}
 
-.about-me>h1 {
-    padding: 0 0 1.5rem 0;
+#info-content>div {
+    margin: 2rem;
+    padding: 2rem;
+    border-radius: 10px;
+    background-color: rgb(49, 49, 49);
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.02),
+        0px 5px 5px rgba(0, 0, 0, 0.04),
+        0px 12px 12px rgba(0, 0, 0, 0.06),
+        0px 20px 20px rgba(0, 0, 0, 0.08),
+        0px 32px 32px rgba(0, 0, 0, 0.10);
 }
 
 /*! next button */
