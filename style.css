@@ -153,6 +153,22 @@ section {
     opacity: 1;
 }
 
+/* ! project section */
+#project-content{
+    display: grid;
+    grid-template: 0.5fr 3fr 2fr/ 6fr 4fr;
+}
+
+#project-content>h1{
+    padding: 2rem;
+    font-size: 2.2rem;
+}
+
+.projects-link{
+    align-self: self-start;
+    grid-row: 3/4;
+    grid-column: 2/3;
+}
 
 /*! next button */
 
