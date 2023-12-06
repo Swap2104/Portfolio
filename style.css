@@ -39,6 +39,7 @@ section {
 }
 
 #home-container>div>span {
+    transition: all 2s ;
     font-style: italic;
     color: rgb(255, 108, 108);
 }
