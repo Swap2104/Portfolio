@@ -1,5 +1,6 @@
 const body = document.getElementsByTagName('body')
 const sections = document.querySelectorAll('section')
+const langs=document.querySelectorAll(".right, .left ,.about-me ,.github-card")
 
 //? intersection observer-- used to change background color on scroll
 const observer = new IntersectionObserver(e => {
@@ -12,7 +13,7 @@ const observer = new IntersectionObserver(e => {
     }
     e.forEach(el => {
         if (el.isIntersecting) {
-            console.log(el.target.id)
+            console.log(el.target)
             body[0].style.backgroundColor = color[el.target.id]
         } else {
 
@@ -22,4 +23,25 @@ const observer = new IntersectionObserver(e => {
 
 sections.forEach(e => {
     observer.observe(e)
+})
+
+console.log(langs)
+// ? intersection observer-- used for on scroll animation
+const animation=new IntersectionObserver(e=>{
+    e.forEach(el=>{
+        if(el.isIntersecting){
+            console.log(el.target)
+            el.target.classList.remove("hide")
+            el.target.classList.add("show")
+        }else{
+            el.target.classList.remove("show")
+            el.target.classList.add("hide")
+        }
+    })
+})
+
+
+langs.forEach(e=>{
+    e.classList.add("hide")
+    animation.observe(e)
 })
