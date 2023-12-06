@@ -44,43 +44,41 @@ langs.forEach(e => {
     animation.observe(e)
 })
 
-const home_animation = new IntersectionObserver(e => {
-    e.forEach(el => {
-        if (el.isIntersecting) {
-            el.target.classList.add("h1-animation")
-        } else {
-            el.target.classList.remove("h1-animation")
+//? intersection observer for home text animation
+const homeAnimationObserver = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            handleMouseOverAnimation();
         }
-    })
-})
+    });
+});
 
-document.querySelectorAll(".hello").forEach(e => home_animation.observe(e))
+document.querySelectorAll(".hello").forEach(element => homeAnimationObserver.observe(element));
 
+//? function for text animation
 const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+let interval = null
 
-let interval = null;
-
-document.querySelector(".h1-animation").onmouseover = event => {
+function handleMouseOverAnimation() {
     let iteration = 0;
 
     clearInterval(interval);
 
     interval = setInterval(() => {
-        event.target.innerText = event.target.innerText
+        document.querySelector(".hello").innerText = document.querySelector(".hello").innerText
             .split("")
             .map((letter, index) => {
                 if (index < iteration) {
-                    return event.target.dataset.value[index];
+                    return document.querySelector(".hello").dataset.value[index];
                 }
-
-                return letters[Math.floor(Math.random() * 26)]
+                return letters[Math.floor(Math.random() * 26)];
             })
             .join("");
 
-        if (iteration >= event.target.dataset.value.length) {
+        if (iteration >= document.querySelector(".hello").dataset.value.length) {
             clearInterval(interval);
         }
 
         iteration += 1 / 3;
-    }, 40);
+    }, 40); //!<-- animation speed
 }
