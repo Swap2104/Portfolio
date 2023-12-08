@@ -1,8 +1,7 @@
 const body = document.getElementsByTagName('body')
 const sections = document.querySelectorAll('section')
-const langs = document.querySelectorAll(".right, .left ,.about-me ,.github-card")
-// const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-// let interval = null;
+const langs = document.querySelectorAll(".right, .left ,.about-me ,.github-card ,.pixel-art ,.blender, .drawing")
+// ! To add card animation add it's class / id here 
 
 
 //? intersection observer-- used to change background color on scroll
