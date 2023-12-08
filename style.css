@@ -3,6 +3,13 @@
     src: url(assets/FiraCodeNerdFont-Light.ttf);
 }
 
+:root {
+    --font-large: 8rem;
+    --font-mid: 1rem;
+    --font-big: 2rem;
+    --font-para-big: 1.5rem;
+}
+
 * {
     font-family: FiraCode;
     margin: 0;
@@ -17,6 +24,8 @@ body {
     transition: background-color 1s;
 }
 
+
+
 /* ! applies to all sections */
 section {
     min-height: 100vh;
@@ -27,13 +36,15 @@ section {
 /* ! index section */
 
 #home-container>h1 {
-    font-size: 8rem;
+    font-size: var(--font-large);
     justify-self: center;
     align-self: flex-end;
 }
 
+
+
 #home-container>div {
-    font-size: 1.6rem;
+    font-size: var(--font-para-big);
     justify-self: center;
     align-self: flex-start;
 }
@@ -119,16 +130,12 @@ section {
     background-color: rgb(30, 30, 30);
     border-radius: 10px;
     width: 60%;
-    /* max-height: 5rem; */
     margin-bottom: 2rem;
     padding: 2rem;
 
     display: grid;
     grid-template: 1fr/ 8fr 2fr;
 
-
-
-    /* https://smoothshadows.com/#djEsMSw1LDAuMSw4LDgsMCwjMDAwMDAwLCMzMTMxMzEsIzFlMWUxZSwy */
     box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.02),
         0px 1px 1px rgba(0, 0, 0, 0.04),
         0px 3px 3px rgba(0, 0, 0, 0.06),
@@ -140,7 +147,6 @@ section {
 .left>img {
     align-self: center;
     justify-self: center;
-    /* align-self: center; */
     height: 9rem;
 }
 
@@ -170,7 +176,7 @@ section {
 
 #project-content>h1 {
     padding: 2rem;
-    font-size: 2.2rem;
+    font-size: var(--font-big);
 }
 
 .projects-link {
@@ -193,7 +199,7 @@ section {
 
 #hobbies-content>h1 {
     padding: 2rem;
-    font-size: 2.2rem;
+    font-size: var(--font-big);
 }
 
 .pixel-art,
@@ -207,11 +213,11 @@ section {
     display: grid;
     grid-template: 1fr 5fr/ 8fr 2fr;
 
-box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.02),
-  0px 5px 5px rgba(0, 0, 0, 0.04),
-  0px 12px 12px rgba(0, 0, 0, 0.06),
-  0px 20px 20px rgba(0, 0, 0, 0.08),
-  0px 32px 32px rgba(0, 0, 0, 0.10);
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.02),
+        0px 5px 5px rgba(0, 0, 0, 0.04),
+        0px 12px 12px rgba(0, 0, 0, 0.06),
+        0px 20px 20px rgba(0, 0, 0, 0.08),
+        0px 32px 32px rgba(0, 0, 0, 0.10);
 
 
 }
@@ -237,7 +243,7 @@ box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.02),
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 1rem;
+    font-size: var(--font-mid);
 
     justify-self: end;
     margin: 1rem;
@@ -246,7 +252,63 @@ box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.02),
 }
 
 .next>a {
-    font-size: 1.3rem;
+    font-size: var(--font-mid);
     text-decoration: none;
     padding: 1rem;
+}
+
+@media screen and (max-width:800px) {
+    :root {
+        --font-large: 4rem;
+        --font-mid: .5fr;
+        /* --font-big: 1rem; */
+        --font-para-big: .9rem;
+    }
+
+    section {
+        min-height: 100vh;
+        display: grid;
+        grid-template: 9fr .5fr/1fr;
+    }
+
+    #about-container {
+        display: grid;
+        grid-auto-flow: row;
+        grid-template: 1fr / 1fr;
+    }
+
+    .github-card {
+        margin: 2rem;
+        margin-top: 0;
+    }
+
+    .right,
+    .left {
+        width: 100%;
+        grid-template: 1fr/ 1fr;
+        text-align: justify;
+        justify-self: center;
+    }
+
+    .right>img,
+    .left>img {
+        display: none;
+    }
+
+    .left {
+        grid-template: 1fr/ 1fr;
+    }
+
+    #project-content {
+        grid-template: .5fr  / 1fr;
+    }
+
+    .projects-link {
+        align-self: center;
+        grid-row: 3/4;
+        grid-column: 1/2;
+    }
+    .filler{
+        display: none;
+    }
 }
