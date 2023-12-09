@@ -3,6 +3,13 @@
     src: url(assets/FiraCodeNerdFont-Light.ttf);
 }
 
+:root {
+    --font-large: 8rem;
+    --font-mid: 1rem;
+    --font-big: 2rem;
+    --font-para-big: 1.5rem;
+}
+
 * {
     font-family: FiraCode;
     margin: 0;
@@ -15,8 +22,9 @@
 body {
     overflow-x: hidden;
     transition: background-color 1s;
-    cursor: default;
 }
+
+
 
 /* ! applies to all sections */
 section {
@@ -28,13 +36,15 @@ section {
 /* ! index section */
 
 #home-container>h1 {
-    font-size: 8rem;
+    font-size: var(--font-large);
     justify-self: center;
     align-self: flex-end;
 }
 
+
+
 #home-container>div {
-    font-size: 1.6rem;
+    font-size: var(--font-para-big);
     justify-self: center;
     align-self: flex-start;
 }
@@ -137,7 +147,6 @@ section {
 .left>img {
     align-self: center;
     justify-self: center;
-    /* align-self: center; */
     height: 9rem;
 }
 
@@ -167,7 +176,7 @@ section {
 
 #project-content>h1 {
     padding: 2rem;
-    font-size: 2.2rem;
+    font-size: var(--font-big);
 }
 
 .projects-link {
@@ -190,7 +199,7 @@ section {
 
 #hobbies-content>h1 {
     padding: 2rem;
-    font-size: 2.2rem;
+    font-size: var(--font-big);
 }
 
 .pixel-art,
@@ -209,16 +218,12 @@ section {
         0px 12px 12px rgba(0, 0, 0, 0.06),
         0px 20px 20px rgba(0, 0, 0, 0.08),
         0px 32px 32px rgba(0, 0, 0, 0.10);
-
-
 }
 
 .pixel-art>p,
 .blender>p,
 .drawing>p {
-    /* padding: 2rem; */
     align-self: center;
-
 }
 
 .pixel-art>img,
@@ -234,7 +239,7 @@ section {
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 1rem;
+    font-size: var(--font-mid);
 
     justify-self: end;
     margin: 1rem;
@@ -243,55 +248,98 @@ section {
 }
 
 .next>a {
-    font-size: 1.3rem;
+    font-size: var(--font-mid);
     text-decoration: none;
     padding: 1rem;
 }
 
-/* ! courser */
-.cursor {
-    position: absolute;
-    border-radius: 50%;
-    border: 2px solid white;
-    width: 35px;
-    height: 35px;
-    backdrop-filter: blur(2px);
-    transition-duration: 300ms;
-    transition-timing-function: ease-in-out;
-    pointer-events: none;
-    z-index: 999;
-}
-
-.click {
-    border: 2px solid rgb(255, 108, 108);
-    animation: click .5s ease-in-out 1 alternate;
-}
-
-
-
-@keyframes cursor-anim {
-    from {
-        transform: scale(1);
+@media screen and (max-width:800px) {
+    :root {
+        --font-large: 4rem;
+        --font-mid: .5fr;
+        /* --font-big: 1rem; */
+        --font-para-big: .9rem;
     }
 
-    to {
-        transform: scale(1.5);
-    }
-}
-
-@keyframes click {
-    0% {
-        transform: scale(1);
+    section {
+        min-height: 100vh;
+        display: grid;
+        grid-template: 9fr .5fr/1fr;
     }
 
-    50% {
-        transform: scale(2);
-        opacity: .7;
+    #about-container {
+        display: grid;
+        grid-auto-flow: row;
+        grid-template: 1fr / 1fr;
     }
 
-    100% {
-        transform: scale(1);
-        opacity: .5;
-        /* border: 2px solid rgb(250, 216, 216); */
+    .github-card {
+        margin: 2rem;
+        margin-top: 0;
+    }
+
+    .right,
+    .left {
+        width: 100%;
+        grid-template: 1fr/ 1fr;
+        text-align: justify;
+        justify-self: center;
+    }
+
+    .right>img,
+    .left>img {
+        display: none;
+    }
+
+    .left {
+        grid-template: 1fr/ 1fr;
+    }
+
+    #project-content {
+        grid-template: .5fr / 1fr;
+    }
+
+    .projects-link {
+        align-self: center;
+        grid-row: 3/4;
+        grid-column: 1/2;
+    }
+
+    .filler {
+        display: none;
+    }
+
+    #hobbies-content {
+        padding: 2rem;
+        display: grid;
+        grid-template: .5fr .5fr 2fr 2fr 2fr /1fr;
+    }
+
+    .hobbies-card {
+        width: 100%;
+    }
+
+    #Hobbies{
+        /* grid-template: .5fr 1fr 1fr 1fr; */
+    }
+
+    .pixel-art>img,
+    .blender>img,
+    .drawing>img {
+        display: none;
+    }
+
+    .pixel-art,
+    .blender,
+    .drawing {
+        padding: 2rem;
+        margin: 1rem;
+        grid-template: .2fr 1fr / 1fr;
+    }
+
+    .pixel-art>p,
+    .blender>p,
+    .drawing>p {
+        /* align-self: self-start; */
     }
 }
