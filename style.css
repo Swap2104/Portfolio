@@ -343,3 +343,50 @@ section {
         /* align-self: self-start; */
     }
 }
+
+/* ! courser */
+.cursor {
+    position: absolute;
+    border-radius: 50%;
+    border: 2px solid white;
+    width: 35px;
+    height: 35px;
+    backdrop-filter: blur(2px);
+    transition-duration: 300ms;
+    transition-timing-function: ease-in-out;
+    pointer-events: none;
+    z-index: 999;
+}
+
+.click {
+    border: 2px solid rgb(255, 108, 108);
+    animation: click .5s ease-in-out 1 alternate;
+}
+
+
+
+@keyframes cursor-anim {
+    from {
+        transform: scale(1);
+    }
+
+    to {
+        transform: scale(1.5);
+    }
+}
+
+@keyframes click {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(2);
+        opacity: .7;
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: .5;
+    }
+}
