@@ -137,7 +137,6 @@ section {
 .left>img {
     align-self: center;
     justify-self: center;
-    /* align-self: center; */
     height: 9rem;
 }
 
@@ -292,6 +291,5 @@ section {
     100% {
         transform: scale(1);
         opacity: .5;
-        /* border: 2px solid rgb(250, 216, 216); */
     }
 }
